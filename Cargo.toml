@@ -1,0 +1,25 @@
+[package]
+name = "elecrust"
+version = "0.0.1"
+edition = "2021"
+description = "Elecrust is a modern embedded operating system for microcontrollers."
+license = "MIT"
+repository = "https://github.com/houxd/elecrust"
+homepage = "https://github.com/houxd/elecrust"
+documentation = "https://docs.rs/elecrust"
+keywords = ["embedded", "mcu", "no-std", "async", "executor"]
+categories = ["no-std"]
+authors = ["houxd.g@gmail.com"]
+
+[lib]
+crate-type = ["lib"]
+
+[features]
+default = ["util"]
+util = []                                        # 启用实用工具功能, 例如时间处理等
+
+[dependencies]
+time = { version = "0.3.54", default-features = false, features = ["alloc", "macros"] }
+
+
+[build-dependencies]
